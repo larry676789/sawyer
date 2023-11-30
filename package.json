@@ -4,7 +4,8 @@
   "description": "list of coding exercises to learn the basics of CS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "index": "node index.js"
   },
   "author": "Mastashake",
   "license": "MIT"

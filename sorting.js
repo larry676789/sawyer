@@ -22,10 +22,18 @@ function bubbleSort(numbers=[]) {
     return numbers   
 }
 
-function insertionSort(numbers=[]) {
-    
+function insertionSort(numbers=[]){
+    for(var i = 1; i< numbers.length; i++) {
+        for(var j = i - 1; j > -1; j--){
+         if(numbers[j+1] < numbers[j]){
+            [numbers[j + 1], numbers[j]] = [numbers[j], numbers[j+1]]
+         } 
+        }
+    }  
+    return numbers;     
 }
 
 module.exports = {
-    bubbleSort
+    bubbleSort,
+    insertionSort
 }

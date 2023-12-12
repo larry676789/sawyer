@@ -1,5 +1,5 @@
 const { counter, fibonnaci, fibRecur, factorial, factorialRec } = require( "./math");
-const { bubbleSort, insertionSort } = require('./sorting');
+const { bubbleSort, insertionSort, mergeSort } = require('./sorting');
 /* 
 This is a file demonstating data structures
 */
@@ -21,3 +21,4 @@ This is a file demonstating data structures
 
 console.log(bubbleSort([3,2,1,5,3,9,7]))
 console.log(insertionSort([3,1,56,22,15,-23]))
+console.log(mergeSort([3,1,56,22,15,-23]))

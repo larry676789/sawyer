@@ -42,14 +42,14 @@ function merge(numbers1=[], numbers2=[]) {
         let min = 0;
         for (let i = 0; i < numbers1.length; i++) {
             if (i !== min) {
-                if (numbers[i] < numbers1[min]) {
-                    [numbers[i], numbers[min]] = [numbers1[min], numbers1[i]];
+                if (numbers1[i] < numbers1[min]) {
+                    [numbers1[i], numbers1[min]] = [numbers1[min], numbers1[i]];
                     min = i;
                 }
             }
         }
     }
-}
+
     if (numbers2.length > 1) {
         let min = 0;
         for (let i = 0; i < numbers2.length; i++) {
@@ -79,12 +79,13 @@ function merge(numbers1=[], numbers2=[]) {
         j++
     }
     return res; 
+}
 
 function mergeSort(numbers=[]) {
     if (numbers.length <= 1) return numbers;
-    let mid = math.ceil(numers.length / 2);
+    let mid = Math.ceil(numbers.length / 2);
     let numbers1= numbers.slice(0, mid);
-    let numbders2 = numbers.slice(mid);
+    let numbers2 = numbers.slice(mid);
     let numbers1_subnumbers = [],
         sorted_numbers1_subnumbers = [];
     let numbers2_subnumbers = [],
@@ -92,11 +93,11 @@ function mergeSort(numbers=[]) {
     for (let i =0; i < numbers1.length; i += 2) {
         numbers1_subnumbers.push(numbers1.slice(i, i + 2));
     for (let i = 0; i < numbers2.length; i += 2){
-        numbers2_subnumbers.pusj(numbers2.slice(i, i + 2));
+        numbers2_subnumbers.push(numbers2.slice(i, i + 2));
     }
     for (let i = 0; i < numbers1_subnumbers.length; i += 2) {
-        let result = merge(numbers1_subnumberes[i], numbers1_subnumbers[i + 1]);
-        result.forEach((value) => sorted-numbers1-numbers1_subnumbers.push(value));
+        let result = merge(numbers1_subnumbers[i], numbers1_subnumbers[i + 1]);
+        result.forEach((value) => sorted_numbers1_numbers1_subnumbers.push(value));
     }
     for (let i = 0; i < numbers2_subnumbers.length; i += 2) {
         let result = merge(numbers2_subarrays[i], numbers2_subnumbers[i + 1]);

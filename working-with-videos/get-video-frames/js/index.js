@@ -8,15 +8,18 @@ async function getFile() {
     // Open file picker and destructure the result the first handle
     const [fileHandle] = await window.showOpenFilePicker();
     const file = await fileHandle.getFile();
+
+    const video = document.getElementById("video-player")
+    video.src = URL.createObjectURL(file)
     return file;
   }
   
   // create a variable to hold the button element for reference check https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 
-  const elem = document.getElementById("file-picker")
+  const button = document.getElementById("file-picker")
 
   // next we want to attach a event listener for the "click" event https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
   
-  elem.addEventListener("click", getFile) 
+  button.addEventListener("click", getFile) 
 
   // create the transformer

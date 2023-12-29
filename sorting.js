@@ -34,7 +34,7 @@ function insertionSort(numbers=[]){
 }
 
 
-function merge(numbers1, numbers2) {
+function merge(numbers1=[], numbers2=[]) {
     let res = [],
         i = 0,
         j = 0;    
@@ -64,7 +64,7 @@ function merge(numbers1, numbers2) {
     while (i < numbers1.length && j < numbers2.length) {
         if (numbers1[i] < numbers2[j]) {
             res.push(numbers1[i]);
-            i++
+            i++; 
         } else {
             res.push(numbers2[j]);
             j++;
@@ -80,7 +80,7 @@ function merge(numbers1, numbers2) {
     }
     return res; 
 
-function mergeSort(numbers) {
+function mergeSort(numbers=[]) {
     if (numbers.length <= 1) return numbers;
     let mid = math.ceil(numers.length / 2);
     let numbers1= numbers.slice(0, mid);
@@ -103,11 +103,63 @@ function mergeSort(numbers) {
         result.forEach((value) => sorted_numbers2_subnumbers.push(value));
     }
     let result = merge(sorted_numbers1_subnumbers, sorted_numbers2_subnumbers);
+
     return result;
     }
 }
+function selectionSort(numbers=[]) {
+    let min;
+    for (let i = 0; i < numbers.length; i++) {
+        min = i; 
+        for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[j] < arr[min]) {
+                min = j;
+            }
+        }
+        if (min !== i) {
+            [numbers[i], numbers[min]] = [numbers[min], numbers[i]];
+        }
+    }
+    return numbers;
+}
+function partition(items, left, right) {
+    let pivot = items[Math.floor((right + left) / 2)],
+        i = left,
+        j = right;
+    while (i <= j) {
+        while (items[i] < pivot) {
+            i++;
+        }
+        while (items[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            [items[i], items[j]] = [items[j], items[i]];
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
+function quickSort(items, left, right) {
+    let index;
+    if (items.length > 1) {
+        index = partition(items, left, right);
+        if (left < index - 1) {
+            quickSort(items, left, index - 1);
+        }
+        if (index < right) {
+            quickSort(items, index, right);
+        }
+    }
+    return items;
+}
+
 module.exports = {
     bubbleSort,
     insertionSort,
-    mergeSort
+    mergeSort,
+    selectionSort,
+    quickSort
 }
+

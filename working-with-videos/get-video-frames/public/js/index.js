@@ -4,6 +4,17 @@
  * step 3: create a new transform stream that will save the video frames
  * step 4: create class to expose all functions "class" is a group of functions and properties
  */
+function createProcessor(video){ 
+  const stream = video.captureStream()
+  const videoTrack = stream.getVideoTracks()[0] 
+  console.log(stream)
+  const trackProcessor = new MediaStreamTrackProcessor({ track: videoTrack });
+
+
+
+  return trackProcessor.readable
+
+}
 async function getFile() {
     // Open file picker and destructure the result the first handle
     const [fileHandle] = await window.showOpenFilePicker();
@@ -11,6 +22,7 @@ async function getFile() {
 
     const video = document.getElementById("video-player")
     video.src = URL.createObjectURL(file)
+    const readable = createProcessor(video)
     return file;
   }
   
@@ -23,3 +35,4 @@ async function getFile() {
   button.addEventListener("click", getFile) 
 
   // create the transformer
+  

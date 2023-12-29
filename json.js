@@ -10,5 +10,10 @@
  */
 
 function createPerson({firstName, lastName, age}) {
-    
-}
+    const jimmy = {
+        firstName: "Sniffy"
+        lastName: "McSnifferson"
+        age: "6969"
+    }; 
+ }
+ 

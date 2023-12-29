@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "index": "node index.js",
+    "math": "node math/index.js",
     "video-frames": "node working-with-videos/get-video-frames/index.js"
   },
   "author": "Mastashake",

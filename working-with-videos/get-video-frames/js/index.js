@@ -11,3 +11,12 @@ async function getFile() {
     return file;
   }
   
+  // create a variable to hold the button element for reference check https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+
+  const elem = document.getElementById("file-picker")
+
+  // next we want to attach a event listener for the "click" event https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+  
+  elem.addEventListener("click", getFile) 
+
+  // create the transformer

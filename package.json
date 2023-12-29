@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "index": "node index.js"
+    "index": "node index.js",
+    "video-frames": "node working-with-videos/get-video-frames/index.js"
   },
   "author": "Mastashake",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
